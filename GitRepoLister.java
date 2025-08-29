@@ -48,8 +48,6 @@ public class GitRepoLister implements Runnable {
     @Override
     public void run() {
         try {
-
-
             // Connect to GitHub
             GitHub github = setupGitHubClient();
 
