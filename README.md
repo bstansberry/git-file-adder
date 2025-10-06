@@ -4,6 +4,35 @@ This repo provides a number of JBang scripts I've used to help with administerin
 
 The repository is named after the first such script.
 
+## Prerequisites
+
+- [JBang](https://www.jbang.dev/) installed
+- Java 21 or newer (JBang will install this if you don't already have it)
+- GitHub credentials configured (see [Authentication](#authentication))
+
+## Authentication
+
+Policy Panda requires GitHub credentials in one of these forms:
+
+- **Environment Variables**:
+    - `GITHUB_OAUTH`: Your GitHub OAuth token
+    - `GITHUB_JWT`: GitHub JWT token (alternative)
+
+- **Property File**:
+    - Create a `~/.github` file in your home directory with either:
+
+        ```txt
+        oauth=your_token_here
+        ```
+
+      or
+
+        ```txt
+        jwt=your_token_here
+        ```
+
+For more details, see [GitHub API Authentication](https://hub4j.github.io/github-api/#Authentication).
+
 ## GitFileAdder
 JBang script for adding a one or more files to multiple repositories in a GitHub organization.
 
