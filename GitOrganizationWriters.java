@@ -85,8 +85,7 @@ public class GitOrganizationWriters implements Runnable {
 
                     writer.println("### " + name);
                     writer.println();
-                    writer.println("**GitHub**: " + user.ghUser.getLogin() + "\\");
-                    writer.println("**URL**: " + user.ghUser.getHtmlUrl());
+                    writer.println("**GitHub**: [" + user.ghUser.getLogin() + "](" + user.ghUser.getHtmlUrl() + ")");
                     writer.println();
 
                     if (outputLevel != DetailLevel.PERSONAL) {
