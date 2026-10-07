@@ -187,3 +187,40 @@ with write permissions to GitHub organizations.
                            Name of the output file
   -V, --version            Print version information and exit..
 ```
+
+## GitOrganizationGroupIds
+
+The `GitOrganizationGroupIds` script iterates repositories in one or more GitHub organizations and writes a Markdown table recording each repository's name, whether it is archived, its default branch name, and the `groupId` from any `pom.xml` found at the root of that default branch.
+
+### Basic Usage
+
+```shell
+cd git-file-adder
+jbang GitOrganizationGroupIds.java ORGANIZATION_NAME
+```
+
+Output is written to `group-ids.md` by default. The Markdown table contains five columns:
+
+* **Organization** — the GitHub organization name
+* **Repository** — the repository name
+* **Archived** — whether the repository is archived
+* **Default Branch** — the name of the default branch
+* **Group ID** — the value of the top-level `<groupId>` element in the root `pom.xml`, or `N/A` if no `pom.xml` exists
+
+### Full usage description
+
+```shell
+Usage: GitOrganizationGroupIds [-ahV] [-o=<outputFile>] [<organizations>[,
+                                <organizations>...]]
+The GitOrganizationGroupIds script writes to a file the Maven group IDs for
+repositories in a list of GitHub organizations
+
+      [<organizations>[,<organizations>...]]
+                  The organizations to check
+  -a, --include-archived
+                  Whether archived repositories should be included
+  -h, --help      Show this help message and exit.
+  -o, --output-file=<outputFile>
+                  Name of the output file
+  -V, --version   Print version information and exit.
+```
